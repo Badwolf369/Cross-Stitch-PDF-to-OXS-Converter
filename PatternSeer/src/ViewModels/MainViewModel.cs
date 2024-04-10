@@ -14,9 +14,12 @@ namespace PatternSeer.ViewModels;
 public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
 {
     /* #region Fields */
+    /// <summary>
+    /// Info for the Cross Stitch chart being worked on.
+    /// </summary>
     private Chart _chart;
     /// <summary>
-    /// Signal to allow import and open commands to pause and wait until
+    /// Signal to allow import and export commands to pause and wait until
     /// the file picker closes.
     /// </summary>
     private SemaphoreSlim _filePickerSemaphore;
