@@ -5,7 +5,7 @@ completedColumns:
   - Done
 ---
 
-# PatternSeer
+# To Do
 
 ## Backlog
 
