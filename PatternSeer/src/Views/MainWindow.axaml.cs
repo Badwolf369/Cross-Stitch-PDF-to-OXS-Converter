@@ -2,7 +2,6 @@ using System.ComponentModel;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
-using PatternSeer.ViewModels;
 
 namespace PatternSeer.Views;
 
@@ -34,7 +33,7 @@ public partial class MainWindow : Window
     {
         switch (e.PropertyName)
         {
-            case nameof(MainViewModel.IsPdfPickerOpen):
+            case nameof(IsPdfPickerOpen):
                 if (IsPdfPickerOpen)
                 {
                     PdfFilePath = await ViewUtils.OpenFilePickerAsync(
