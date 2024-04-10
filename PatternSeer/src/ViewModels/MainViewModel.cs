@@ -1,7 +1,6 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
-using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Emgu.CV;
@@ -51,7 +50,7 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
     /// Which page(s) of the PDF is currently visible in the PDF viewer?
     /// </summary>
     [ObservableProperty]
-    private string _visiblePdfPage = "Page 0";
+    private string _visiblePdfPages = "Page 0";
     /* #endregion Observable Properties*/
 
     /* #region Constructors */
@@ -73,7 +72,7 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
     /// Runs when an observable property in the ViewModel is updated.
     /// </summary>
     /// <param name="sender">ViewModel being updated.</param>
-    /// <param name="e">Arguments related to the event caller.</param>
+    /// <param name="e">Arguments related to the updated property.</param>
     public void OnViewModelUpdate(object sender, PropertyChangedEventArgs e)
     {
         switch (e.PropertyName)
