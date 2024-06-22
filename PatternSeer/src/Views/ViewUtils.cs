@@ -5,9 +5,10 @@ namespace PatternSeer.Views;
 
 public class ViewUtils {
     /// <summary>
-    /// Asynchronously open the system's file picker, allowing only
+    /// Asynchronously opens the system's file picker, allowing only
     /// one PDF file to be picked.
     /// </summary>
+    /// <param name="topLevel">TopLevel object of the window opening the file picker.</param>
     /// <returns>Path to the opened PDF file</returns>
     public static async Task<string> OpenFilePickerAsync(TopLevel topLevel)
     {

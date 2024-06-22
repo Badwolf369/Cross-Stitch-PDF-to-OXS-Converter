@@ -26,14 +26,14 @@ public partial class MainWindow : Window
         set => SetValue(IsPdfPickerOpenProperty, value);
     }
     /// <summary>
-    /// Avalonia property to sync IsPdfPickerOpen with the DataContext
+    /// Avalonia property to sync IsPdfPickerOpen with the DataContext.
     /// </summary>
     public static readonly AvaloniaProperty<bool>
         IsPdfPickerOpenProperty = AvaloniaProperty.
         Register<MainWindow, bool>(nameof(IsPdfPickerOpen));
 
     /// <summary>
-    /// Path to the currently opened PDF file
+    /// Path to the currently opened PDF file.
     /// </summary>
     public string PdfFilePath
     {
@@ -41,7 +41,7 @@ public partial class MainWindow : Window
         set => SetValue(PdfFilePathProperty, value);
     }
     /// <summary>
-    /// Avalonia property to sync PdfFilePath with the DataContext
+    /// Avalonia property to sync PdfFilePath with the DataContext.
     /// </summary>
     public static readonly AvaloniaProperty<string>
         PdfFilePathProperty = AvaloniaProperty.
@@ -53,7 +53,7 @@ public partial class MainWindow : Window
     
     /* #region Constructors*/
     /// <summary>
-    /// Initialize a new instance of the <c>MainWindow</c> class.
+    /// Initializes a new instance of the <c>MainWindow</c> class.
     /// </summary>
     public MainWindow()
     {
@@ -68,11 +68,10 @@ public partial class MainWindow : Window
 
     /* #region Public Methods*/
     /// <summary>
-    /// Event that is triggered when observable properties in the
-    /// ViewModel are updated.
+    /// Event that is triggered when observable properties in the ViewModel are updated.
     /// </summary>
-    /// <param name="sender">ViewModel that is updated.</param>
-    /// <param name="e">Arguments related to the update event.</param>
+    /// <param name="sender">ViewModel that was updated.</param>
+    /// <param name="e">Arguments related to the updated property.</param>
     public async void OnViewModelUpdate(object sender, PropertyChangedEventArgs e)
     {
         switch (e.PropertyName)

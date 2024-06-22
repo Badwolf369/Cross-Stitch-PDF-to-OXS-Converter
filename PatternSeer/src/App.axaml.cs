@@ -11,18 +11,19 @@ namespace PatternSeer;
 /// </summary>
 public partial class App : Application {
     /// <summary>
-    /// Initializes the Avalonia app.
+    /// Code that runs on app initialization.
     /// </summary>
     public override void Initialize() {
         AvaloniaXamlLoader.Load(this);
     }
 
     /// <summary>
-    /// Run after the initial creation of the Avalonia app is finished.
+    /// Code that runs after the app initialization is finished.
     /// </summary>
     public override void OnFrameworkInitializationCompleted() {
         MainViewModel viewmodel = new MainViewModel();
 
+        // Start up a desktop application
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
             MainWindow window = new MainWindow
             {

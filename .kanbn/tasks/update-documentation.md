@@ -1,10 +1,10 @@
 ---
 created: 2024-04-10T20:41:52.635Z
-updated: 2024-04-10T20:52:09.523Z
+updated: 2024-06-22T18:13:44.431Z
 assigned: ""
 progress: 0
 tags: []
-started: 2024-04-10T00:00:00.000Z
+started: 2024-04-09T00:00:00.000Z
 ---
 
 # Update Documentation
@@ -14,8 +14,8 @@ started: 2024-04-10T00:00:00.000Z
 - [x] Chart.cs
 - [x] ChartPattern.cs
 - [x] MainViewModel.cs
-- [ ] Program.cs
-- [ ] App.axaml.cs
-- [ ] MainWindow.cs
+- [x] Program.cs
+- [x] App.axaml.cs
+- [x] MainWindow.cs
 - [ ] ViewUtils.cs
 - [ ] Class Diagram

@@ -72,9 +72,9 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
 
     /* #region Public Methods */
     /// <summary>
-    /// Runs when an observable property in the ViewModel is updated.
+    /// Event that is triggered when observable properties in the ViewModel are updated.
     /// </summary>
-    /// <param name="sender">ViewModel being updated.</param>
+    /// <param name="sender">ViewModel that was updated.</param>
     /// <param name="e">Arguments related to the updated property.</param>
     public void OnViewModelUpdate(object sender, PropertyChangedEventArgs e)
     {
@@ -91,7 +91,7 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
 
     /* #region ICommands */
     /// <summary>
-    /// Open a file picker then print the path to the picked file.
+    /// Opens a file picker and waits for it to be closed.
     /// </summary>
     [RelayCommand]
     private async void ImportFromPdf()
