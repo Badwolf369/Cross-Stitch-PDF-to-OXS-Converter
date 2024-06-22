@@ -22,10 +22,12 @@ public partial class App : Application {
     /// </summary>
     public override void OnFrameworkInitializationCompleted() {
         MainViewModel viewmodel = new MainViewModel();
-        MainWindow window = new MainWindow();
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
-            window.DataContext = viewmodel;
+            MainWindow window = new MainWindow
+            {
+                DataContext = viewmodel
+            };
             viewmodel.PropertyChanged += window.OnViewModelUpdate;
             viewmodel.PropertyChanged += viewmodel.OnViewModelUpdate;
             desktop.MainWindow = window;

@@ -1,17 +1,17 @@
 namespace PatternSeer.Models;
 public class ChartKey {
-    //TODO: Int here shall be replaced with the OpenCV image type
-    private int SourceImage;
-    private KeySymbol[] Symbols = {};
+    /* #region Fields */
+    /* #endregion */
 
-    public KeySymbol[] getSymbols() {
-        return Symbols;
-    }
+    /* #region Properties */
+    /* #endregion */
 
-    //TODO: Int here shall be replaced with the OpenCV image type
-    public ChartKey(int SourceImage) {}
-    //TODO: Int here shall be replaced with the OpenCV image type
-    public KeySymbol MatchSymbol(int image) {
-        return new KeySymbol(image);
-    }
+    /* #region Private Methods */
+    /* #endregion */
+
+    /* #region Constructors */
+    /* #endregion */
+
+    /* #region Public Methods */
+    /* #endregion */
 }

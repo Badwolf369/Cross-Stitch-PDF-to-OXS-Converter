@@ -30,7 +30,7 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
 
     /* #region Observable Properties */
     /// <summary>
-    /// Is/should the pdf file picker currently be open?
+    /// Is/should the PDF file picker currently be open?
     /// </summary>
     [ObservableProperty]
     private bool _isPdfPickerOpen;

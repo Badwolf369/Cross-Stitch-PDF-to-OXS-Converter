@@ -15,7 +15,8 @@ completedColumns:
 
 ## In Progress
 
-- [organize-code-into-region-tags](tasks/organize-code-into-region-tags.md)
 - [update-documentation](tasks/update-documentation.md)
 
 ## Done
+
+- [organize-code-into-region-tags](tasks/organize-code-into-region-tags.md)

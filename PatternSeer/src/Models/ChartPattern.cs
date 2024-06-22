@@ -6,18 +6,18 @@ public class ChartPattern
 {
     /* #region Fields */
     /// <summary>
-    /// Pattern grid of images that do not have a thread associated with them
+    /// Pattern grid of symbols that do not have a thread associated with them.
     /// </summary>
     private List<List<Mat>> _unkeyedGrid;
     /// <summary>
-    /// Pattern grid of images with their associated threads attached
+    /// Pattern grid of symbols with their associated threads attached.
     /// </summary>
     private List<List<KeySymbol>> _keyedGrid;
     /* #endregion Fields */
 
     /* #region Properties */
     /// <summary>
-    /// Pair of integers describing the x and y dimensions of the pattern
+    /// Pair of integers describing the x and y dimensions of the pattern.
     /// </summary>
     public Tuple<int, int> Size { get; private set; }
     /* #endregion Properties */

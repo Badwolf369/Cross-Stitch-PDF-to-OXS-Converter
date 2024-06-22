@@ -4,14 +4,26 @@ using System.Reflection;
 namespace PatternSeer.Models;
 
 public class KeySymbol {
-    //TODO: Int here shall be replaced with the OpenCV image type
+    /* #region Fields */
     private int Image;
     private string ThreadColor = "";
     private int ThreadCount = 2;
     private int? StitchCount;
     private string Brand = "dmc";
+    /* #endregion */
 
-    //TODO: Int here shall be replaced with the OpenCV image type
+    /* #region Properties */
+    
+    /* #endregion */
+
+    /* #region Private Methods */
+    /* #endregion */
+
+    /* #region Constructors */
+    public KeySymbol(int image) {}
+    /* #endregion */
+
+    /* #region Public Methods */
     public int GetImage() {
         return Image;
     }
@@ -31,7 +43,5 @@ public class KeySymbol {
     public string getBrand() {
         return Brand;
     }
-
-    //TODO: Int here shall be replaced with the OpenCV image type
-    public KeySymbol(int image) {}
+    /* #endregion */
 }
