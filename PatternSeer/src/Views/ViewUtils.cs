@@ -9,6 +9,9 @@ public class ViewUtils {
     /// one PDF file to be picked.
     /// </summary>
     /// <param name="topLevel">TopLevel object of the window opening the file picker.</param>
+    /// <param name="title">Title to display on file picker window.</param>
+    /// <param name="allowMultiple"/>Allow the user to pick multiple files?</param>
+    /// <param name="allowedFileTypes"/>List of allowed file types</param>
     /// <returns>Path to the opened PDF file</returns>
     public static async Task<string> OpenFilePickerAsync(TopLevel topLevel, string title,
         bool allowMultiple, FilePickerFileType[] allowedFileTypes)
