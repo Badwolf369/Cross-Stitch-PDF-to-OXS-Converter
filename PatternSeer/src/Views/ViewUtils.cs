@@ -10,15 +10,16 @@ public class ViewUtils {
     /// </summary>
     /// <param name="topLevel">TopLevel object of the window opening the file picker.</param>
     /// <returns>Path to the opened PDF file</returns>
-    public static async Task<string> OpenFilePickerAsync(TopLevel topLevel)
+    public static async Task<string> OpenFilePickerAsync(TopLevel topLevel, string title,
+        bool allowMultiple, FilePickerFileType[] allowedFileTypes)
     {
         Console.WriteLine("Opening file selection dialogue");
         var files = await topLevel.StorageProvider.OpenFilePickerAsync(
             new FilePickerOpenOptions
             {
-                Title = "Open cross stitch chart PDF",
-                AllowMultiple = false,
-                FileTypeFilter = new[] { FilePickerFileTypes.Pdf }
+                Title = title,
+                AllowMultiple = allowMultiple,
+                FileTypeFilter = allowedFileTypes
             });
         Console.WriteLine("Closing file selection dialogue");
 

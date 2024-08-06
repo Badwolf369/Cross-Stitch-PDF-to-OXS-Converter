@@ -2,6 +2,7 @@ using System.ComponentModel;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
+using Avalonia.Platform.Storage;
 
 namespace PatternSeer.Views;
 
@@ -80,7 +81,10 @@ public partial class MainWindow : Window
                 if (IsPdfPickerOpen)
                 {
                     PdfFilePath = await ViewUtils.OpenFilePickerAsync(
-                        TopLevel.GetTopLevel(this)
+                        TopLevel.GetTopLevel(this),
+                        "Open Cross Stitch Chart PDF",
+                        false,
+                        new[] { FilePickerFileTypes.Pdf }
                     );
                     IsPdfPickerOpen = false;
                 }
