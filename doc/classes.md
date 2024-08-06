@@ -46,28 +46,17 @@ package Model_Layer {
         -unkeyedGrid : List<List<Mat>>
         -keyedGrid : List<List<KeySymbol>>
         ..Properties..
-        +Size : Tuple<int, int> >= (0, 0) <<g/-s>>
+        +Size : Tuple<Int, Int> >= (0, 0) <<g/-s>>
         ====
         ..Private Methods..
         ..Constructors..
         +ChartPattern(unkeyedPattern: List<List<Mat>>, key:ChartKey)
         ..Public Methods..
-        +GetKeySymbolAt(x: int, y: int) : KeySymbol
+        +GetKeySymbolAt(x: Int, y: Int) : KeySymbol
         +KeyGrid(key:ChartKey)
     }
-    class ChartKey #DE473B;line:6B0800 {
-        -<o> Symbols : List<KeySymbol>
-        +ChartKey(source:Mat)
-        +MatchSymbol(image:Mat) : *KeySymbol
-    }
-    class KeySymbol #DE473B;line:6B0800 {
-        -<o> Image : Mat
-        -<o> Color : String
-        -<o> Strands : Integer = 2
-        -<i/o> Count : Integer[0..1]
-        -<o> Brand : String = "DMC"
-        +KeySymbol(image:Mat)
-    }
+    class ChartKey #DE473B;line:6B0800 {}
+    class KeySymbol #DE473B;line:6B0800 {}
 }
 
 package ViewModel_Layer {
@@ -96,12 +85,36 @@ package ViewModel_Layer {
 package View_Layer {
     package Converters {
         class MatToBitmapConverter #108123;line:00510E {
-            +Convert() : Object
-            +ConvertBack() : Object
+            ..Fields..
+            ..Properties..
+            ====
+            ..Private Mothods..
+            ..Public Methods..
+            +Convert(value: Object?, targetType: Type, parameter: Object?, culture: CultureInfo) : Object
+            +ConvertBack(value: Object?, targetType: Type, parameter: Object?, culture: CultureInfo) : Object
         }
     }
-    class ViewUtils #108123;line:00510E {}
-    class Desktop.MainWindow #108123;line:00510E {}
+    class ViewUtils #108123;line:00510E {
+            ..Fields..
+            ..Properties..
+            ====
+            ..Private Mothods..
+            ..Public Methods..
+            +OpenFilePickerAsync(toplevel: Toplevel, title: String, allowMultiple: Bool, allowedfileTypes: FilePickerFileType[]): Task<String>
+    }
+    class Desktop.MainWindow #108123;line:00510E {
+            ..Fields..
+            ..Properties..
+            ..Avalonia Properties..
+            +IsPdfPickerOpen: Boolean
+            +PdfFilePath: String
+            ====
+            ..Private Mothods..
+            ..Constructors..
+            +MainWindow()
+            ..Public Methods..
+            +OnViewModelUpdate(sender: Object, e: PropertyChangedEventArgs)
+    }
     class Mobile.MainView #108123;line:00510E {}
 }
 
