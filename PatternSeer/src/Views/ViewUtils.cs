@@ -3,17 +3,18 @@ using Avalonia.Platform.Storage;
 
 namespace PatternSeer.Views;
 
-public class ViewUtils {
+public class ViewUtils
+{
     /// <summary>
-    /// Asynchronously opens the system's file picker, allowing only
-    /// one PDF file to be picked.
+    /// Asynchronously opens the system's file picker
     /// </summary>
     /// <param name="topLevel">TopLevel object of the window opening the file picker.</param>
     /// <param name="title">Title to display on file picker window.</param>
     /// <param name="allowMultiple"/>Allow the user to pick multiple files?</param>
     /// <param name="allowedFileTypes"/>List of allowed file types</param>
-    /// <returns>Path to the opened PDF file</returns>
-    public static async Task<string> OpenFilePickerAsync(TopLevel topLevel, string title,
+    /// <returns>List of path(s) to opened files</returns>
+    /// <returns><c>null</c> if no file is opened</returns>
+    public static async Task<List<string>> OpenFilePickerAsync(TopLevel topLevel, string title,
         bool allowMultiple, FilePickerFileType[] allowedFileTypes)
     {
         Console.WriteLine("Opening file selection dialogue");
@@ -28,7 +29,19 @@ public class ViewUtils {
 
         if (files.Count > 0)
         {
-            return files[0].Path.ToString().Remove(0, 8);
+            if (allowMultiple)
+            {
+                List<string> paths = new List<string>();
+                for (int i = 0; i < files.Count; i++)
+                {
+                    paths.Add(files[i].Path.ToString().Remove(0, 8));
+                }
+                return paths;
+            }
+            else
+            {
+                return new List<string> { files[0].Path.ToString().Remove(0, 8) };
+            }
         }
         else
         {

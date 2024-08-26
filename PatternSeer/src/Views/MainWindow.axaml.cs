@@ -31,7 +31,7 @@ public partial class MainWindow : Window
     /// </summary>
     public static readonly AvaloniaProperty<bool>
         IsPdfPickerOpenProperty = AvaloniaProperty.
-        Register<MainWindow, bool>(nameof(IsPdfPickerOpen));
+            Register<MainWindow, bool>(nameof(IsPdfPickerOpen));
 
     /// <summary>
     /// Path to the currently opened PDF file.
@@ -46,12 +46,12 @@ public partial class MainWindow : Window
     /// </summary>
     public static readonly AvaloniaProperty<string>
         PdfFilePathProperty = AvaloniaProperty.
-        Register<MainWindow, string>(nameof(PdfFilePath));
+            Register<MainWindow, string>(nameof(PdfFilePath));
     /* #endregion */
 
     /* #region Private Methods*/
     /* #endregion */
-    
+
     /* #region Constructors*/
     /// <summary>
     /// Initializes a new instance of the <c>MainWindow</c> class.
@@ -61,9 +61,9 @@ public partial class MainWindow : Window
         InitializeComponent();
         this.AttachDevTools();
         this.Bind(IsPdfPickerOpenProperty, new Binding("IsPdfPickerOpen")
-            { Mode = BindingMode.TwoWay });
+        { Mode = BindingMode.TwoWay });
         this.Bind(PdfFilePathProperty, new Binding("PdfFilePath")
-            { Mode = BindingMode.TwoWay });
+        { Mode = BindingMode.TwoWay });
     }
     /* #endregion */
 
@@ -80,12 +80,12 @@ public partial class MainWindow : Window
             case nameof(IsPdfPickerOpen):
                 if (IsPdfPickerOpen)
                 {
-                    PdfFilePath = await ViewUtils.OpenFilePickerAsync(
+                    PdfFilePath = (await ViewUtils.OpenFilePickerAsync(
                         TopLevel.GetTopLevel(this),
                         "Open Cross Stitch Chart PDF",
                         false,
                         new[] { FilePickerFileTypes.Pdf }
-                    );
+                    ))[0];
                     IsPdfPickerOpen = false;
                 }
                 break;
