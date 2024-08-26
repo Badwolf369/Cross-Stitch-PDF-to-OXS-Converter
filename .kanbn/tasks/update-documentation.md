@@ -1,10 +1,11 @@
 ---
 created: 2024-04-10T20:41:52.635Z
-updated: 2024-08-06T16:18:43.104Z
+updated: 2024-08-26T05:01:51.766Z
 assigned: ""
 progress: 0
 tags: []
-started: 2024-04-08T00:00:00.000Z
+started: 2024-04-07T00:00:00.000Z
+completed: 2024-08-26T05:01:51.766Z
 ---
 
 # Update Documentation
@@ -18,4 +19,3 @@ started: 2024-04-08T00:00:00.000Z
 - [x] App.axaml.cs
 - [x] MainWindow.cs
 - [x] ViewUtils.cs
-- [ ] Class Diagram
