@@ -7,24 +7,28 @@ using PatternSeer.ViewModels;
 namespace PatternSeer;
 
 /// <summary>
-/// Main wrapper for an Avalonia app.
+/// Main object containing the Avalonia program.
 /// </summary>
-public partial class App : Application {
+public partial class App : Application
+{
     /// <summary>
-    /// Code that runs on app initialization.
+    /// Code that runs on program initialization.
     /// </summary>
-    public override void Initialize() {
+    public override void Initialize()
+    {
         AvaloniaXamlLoader.Load(this);
     }
 
     /// <summary>
-    /// Code that runs after the app initialization is finished.
+    /// Code that runs after the program's initialization is finished.
     /// </summary>
-    public override void OnFrameworkInitializationCompleted() {
+    public override void OnFrameworkInitializationCompleted()
+    {
         MainViewModel viewmodel = new MainViewModel();
 
         // Start up a desktop application
-        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
+        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+        {
             MainWindow window = new MainWindow
             {
                 DataContext = viewmodel

@@ -8,9 +8,10 @@ using Emgu.CV.Structure;
 namespace PatternSeer;
 
 /// <summary>
-/// Main entry point for the software.
+/// Main entry point for the program.
 /// </summary>
-class Program {
+class Program
+{
     /// <summary>
     /// Configures options for the creation of an Avalonia app.
     /// </summary>
@@ -25,7 +26,8 @@ class Program {
     /// Takes command-line arguments and starts the program.
     /// </summary>
     /// <param name="args">User's command-line input.</param>
-    static void Main(string[] args) {
+    static void Main(string[] args)
+    {
         BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
     }
 }

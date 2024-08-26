@@ -14,7 +14,8 @@ namespace PatternSeer.Converters;
 /// <c>IValueConverter</c> that converts from <c>Emgu.CV.Mat</c> to
 /// <c>Avalonia.Media.Imaging.Bitmap</c>.
 /// </summary>
-public class MatToBitmapConverter : IValueConverter {
+public class MatToBitmapConverter : IValueConverter
+{
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         if (value is Mat mat && targetType == typeof(IImage))

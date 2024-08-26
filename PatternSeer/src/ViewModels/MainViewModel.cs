@@ -15,7 +15,7 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
 {
     /* #region Fields */
     /// <summary>
-    /// Info for the Cross Stitch chart being worked on.
+    /// Object containing the Cross Stitch chart being worked on.
     /// </summary>
     private Chart _chart;
     /// <summary>
@@ -82,7 +82,7 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
         {
             // When IsPdfPickerOpen is updated to false, release a semaphore
             // to everything waiting for the pdf picker to close
-            case (nameof(IsPdfPickerOpen)):
+            case nameof(IsPdfPickerOpen):
                 if (!IsPdfPickerOpen) _filePickerSemaphore.Release();
                 break;
         }
@@ -100,11 +100,14 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
         IsPdfPickerOpen = true;
         await _filePickerSemaphore.WaitAsync();
 
-        if (PdfFilePath is not null) {
+        if (PdfFilePath is not null)
+        {
             Debug.WriteLine($"Picked {PdfFilePath}");
             _chart.ImportPdf(PdfFilePath);
             PdfPages = new ObservableCollection<Mat>(_chart.PdfPages);
-        } else {
+        }
+        else
+        {
             Debug.WriteLine("No file was picked");
         }
     }
