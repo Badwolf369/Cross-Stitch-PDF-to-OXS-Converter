@@ -9,9 +9,10 @@ completedColumns:
 
 ## Backlog
 
-- [complete-pdf-viewer](tasks/complete-pdf-viewer.md)
-
 ## Todo
+
+- [make-pdf-viewer-zoom-work](tasks/make-pdf-viewer-zoom-work.md)
+- [make-pdf-viewer-page-numbers-work](tasks/make-pdf-viewer-page-numbers-work.md)
 
 ## In Progress
 
