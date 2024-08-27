@@ -11,10 +11,11 @@ completedColumns:
 
 ## Todo
 
-- [make-pdf-viewer-zoom-work](tasks/make-pdf-viewer-zoom-work.md)
 - [make-pdf-viewer-page-numbers-work](tasks/make-pdf-viewer-page-numbers-work.md)
 
 ## In Progress
+
+- [make-pdf-viewer-zoom-work](tasks/make-pdf-viewer-zoom-work.md)
 
 ## Done
 
