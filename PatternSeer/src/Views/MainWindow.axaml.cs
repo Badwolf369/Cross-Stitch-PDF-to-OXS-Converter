@@ -105,6 +105,16 @@ public partial class MainWindow : Window
         Console.WriteLine(e.Key.ToString() + "down");
         switch (e.Key)
         {
+            // When the left or right CTRL key is pressed down,
+            // disable scrolling and anable zooming
+            case Key.LeftCtrl:
+                PdfViewerScroller.VerticalScrollBarVisibility = ScrollBarVisibility.Disabled;
+                // ZoomEnabled = true;
+                break;
+            case Key.RightCtrl:
+                PdfViewerScroller.VerticalScrollBarVisibility = ScrollBarVisibility.Disabled;
+                // ZoomEnabled = true;
+                break;
         }
     }
 
@@ -118,6 +128,16 @@ public partial class MainWindow : Window
         Console.WriteLine(e.Key.ToString() + "up");
         switch (e.Key)
         {
+            // When the left or right CTRL key is released,
+            // disable zooming and enable scrolling
+            case Key.LeftCtrl:
+                // ZoomEnabled = false;
+                PdfViewerScroller.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+                break;
+            case Key.RightCtrl:
+                // ZoomEnabled = false;
+                PdfViewerScroller.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+                break;
         }
     }
     /* #endregion */

@@ -15,66 +15,75 @@
             <TabControl Name="Viewers" Grid.Column="0" Padding="0">
                 <TabItem Name="PdfViewer" Header="PDF">
                     <Grid RowDefinitions="*,1,25">
-                        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
-                            <ItemsControl ItemsSource="{Binding PdfPages}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <Border Background="LightGray" Padding="50">
-                                            <Image Source="{Binding, Converter={StaticResource matToBitmapConverter}}" Stretch="Uniform" />
-                                        </Border>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
+                        <ScrollViewer Name="PdfViewerScroller" Grid.Row="0"
+                            VerticalScrollBarVisibility="Auto"
+                            Background="LightGray">
+                            <paz:ZoomBorder>
+                                <Canvas>
+                                    <ItemsControl Name="PdfViewerPages"
+                                        ItemsSource="{Binding PdfPages}" VerticalAlignment="Stretch">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="50">
+                                                    <Image
+                                                        Source="{Binding, Converter={StaticResource matToBitmapConverter}}"
+                                                        Stretch="Uniform" />
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Canvas>
+                            </paz:ZoomBorder>
                         </ScrollViewer>
                         <Rectangle Grid.Row="1" Fill="DarkGray" />
                         <Grid Grid.Row="2" Name="PdfViewerFooter" Height="25"
-                        ColumnDefinitions="1.5*,1,5*,1,1*" VerticalAlignment="Bottom">
+                            ColumnDefinitions="1.5*,1,5*,1,1*" VerticalAlignment="Bottom">
                             <TextBlock Grid.Column="0" Text="{Binding PdfZoomLevel}" Padding="10,0"
-                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <Rectangle Grid.Column="1" Fill="DarkGray" />
                             <TextBlock Grid.Column="2" Text="{Binding PdfFilePath}"
-                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <Rectangle Grid.Column="3" Fill="DarkGray" />
                             <TextBlock Grid.Column="4" Text="{Binding VisiblePdfPage}"
-                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Grid>
                     </Grid>
                 </TabItem>
                 <TabItem Name="PatternViewer" Header="Pattern">
                 </TabItem>
             </TabControl>
-            <Rectangle Grid.Column="1" Width="1" Fill="DarkGray"/>
+            <Rectangle Grid.Column="1" Width="1" Fill="DarkGray" />
             <ScrollViewer Name="InfoPanel" Grid.Column="2" Padding="5">
                 <StackPanel>
                     <StackPanel Name="ImportButtons">
                         <TextBlock Text="Import" />
                         <Grid ColumnDefinitions="*,*">
                             <Button Grid.Column="0" Content="From PDF" Margin="2"
-                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
-                            Command="{Binding ImportFromPdfCommand}" />
+                                HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                                Command="{Binding ImportFromPdfCommand}" />
                             <Button Grid.Column="1" Content="From Images" Margin="2"
-                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+                                HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
                         </Grid>
                     </StackPanel>
                     <StackPanel Name="PatternInfo">
                         <TextBlock Text="Pattern Info" />
                         <TextBlock Text="0w x 0h, 0 colors, 0 pages" />
                         <Button Content="Select Pattern" Margin="2"
-                        HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
+                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
                     </StackPanel>
                     <StackPanel Name="PageOverlap">
                         <TextBlock Text="Pattern Overlap" />
                         <Grid ColumnDefinitions="2*,1*">
                             <NumericUpDown Grid.Column="0" Value="0" Margin="2"
-                            Minimum="0" FormatString="0" AllowSpin="False"
-                            ShowButtonSpinner="False"/>
+                                Minimum="0" FormatString="0" AllowSpin="False"
+                                ShowButtonSpinner="False" />
                             <Button Grid.Column="1" Content="Detect" Margin="2"
-                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
+                                HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
                         </Grid>
                     </StackPanel>
                     <Border Name="ChartKey" Background="Red" Height="200" />
                     <Button Name="ExportButton" Content="Export to OSX" Margin="2"
-                    HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
+                        HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
                 </StackPanel>
             </ScrollViewer>
         </Grid>
