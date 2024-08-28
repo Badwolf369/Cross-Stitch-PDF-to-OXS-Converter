@@ -3,6 +3,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
 using Avalonia.Platform.Storage;
+using Avalonia.Input;
+using Avalonia.Controls.Primitives;
 
 namespace PatternSeer.Views;
 
@@ -89,6 +91,33 @@ public partial class MainWindow : Window
                     IsPdfPickerOpen = false;
                 }
                 break;
+        }
+    }
+
+
+    /// <summary>
+    /// Event that is triggered when a key is pressed down.
+    /// </summary>
+    /// <param name="sender">Control that detected the keypress.</param>
+    /// <param name="e">Arguments related to the key press.</param>
+    public void OnKeyDown(object sender, KeyEventArgs e)
+    {
+        Console.WriteLine(e.Key.ToString() + "down");
+        switch (e.Key)
+        {
+        }
+    }
+
+    /// <summary>
+    /// Event that is triggered when a keypress is released.
+    /// </summary>
+    /// <param name="sender">Control that detected the keypress release.</param>
+    /// <param name="e">Arguments related to the keypress release.</param>
+    public void OnKeyUp(object sender, KeyEventArgs e)
+    {
+        Console.WriteLine(e.Key.ToString() + "up");
+        switch (e.Key)
+        {
         }
     }
     /* #endregion */

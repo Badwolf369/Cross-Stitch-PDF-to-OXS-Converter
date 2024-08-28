@@ -35,6 +35,8 @@ public partial class App : Application
             };
             viewmodel.PropertyChanged += window.OnViewModelUpdate;
             viewmodel.PropertyChanged += viewmodel.OnViewModelUpdate;
+            window.KeyDown += window.OnKeyDown;
+            window.KeyUp += window.OnKeyUp;
             desktop.MainWindow = window;
         }
 
