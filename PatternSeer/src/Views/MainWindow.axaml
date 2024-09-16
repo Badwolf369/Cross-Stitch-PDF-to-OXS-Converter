@@ -18,33 +18,26 @@
                         <ScrollViewer Name="PdfViewerScroller" Grid.Row="0"
                             VerticalScrollBarVisibility="Auto"
                             Background="LightGray">
-                            <paz:ZoomBorder>
-                                <Canvas>
-                                    <ItemsControl Name="PdfViewerPages"
-                                        ItemsSource="{Binding PdfPages}" VerticalAlignment="Stretch">
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <Border Padding="50">
-                                                    <Image
-                                                        Source="{Binding, Converter={StaticResource matToBitmapConverter}}"
-                                                        Stretch="Uniform" />
-                                                </Border>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </Canvas>
-                            </paz:ZoomBorder>
+                            <ItemsControl Name="PdfViewerContent"
+                                ItemsSource="{Binding PdfPages}" VerticalAlignment="Stretch">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Padding="50">
+                                            <Image
+                                                Source="{Binding, Converter={StaticResource matToBitmapConverter}}"
+                                                Stretch="Uniform" />
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
                         </ScrollViewer>
                         <Rectangle Grid.Row="1" Fill="DarkGray" />
                         <Grid Grid.Row="2" Name="PdfViewerFooter" Height="25"
-                            ColumnDefinitions="1.5*,1,5*,1,1*" VerticalAlignment="Bottom">
-                            <TextBlock Grid.Column="0" Text="{Binding PdfZoomLevel}" Padding="10,0"
+                            ColumnDefinitions="7*,1,1*" VerticalAlignment="Bottom">
+                            <TextBlock Grid.Column="0" Text="{Binding PdfFilePath}"
                                 HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <Rectangle Grid.Column="1" Fill="DarkGray" />
-                            <TextBlock Grid.Column="2" Text="{Binding PdfFilePath}"
-                                HorizontalAlignment="Center" VerticalAlignment="Center" />
-                            <Rectangle Grid.Column="3" Fill="DarkGray" />
-                            <TextBlock Grid.Column="4" Text="{Binding VisiblePdfPage}"
+                            <TextBlock Grid.Column="2" Text="{Binding VisiblePdfPage}"
                                 HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Grid>
                     </Grid>

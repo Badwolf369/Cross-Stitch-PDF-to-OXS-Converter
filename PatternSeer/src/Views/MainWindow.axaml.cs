@@ -62,9 +62,9 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         this.AttachDevTools();
-        this.Bind(IsPdfPickerOpenProperty, new Binding("IsPdfPickerOpen")
+        Bind(IsPdfPickerOpenProperty, new Binding("IsPdfPickerOpen")
         { Mode = BindingMode.TwoWay });
-        this.Bind(PdfFilePathProperty, new Binding("PdfFilePath")
+        Bind(PdfFilePathProperty, new Binding("PdfFilePath")
         { Mode = BindingMode.TwoWay });
     }
     /* #endregion */
@@ -106,7 +106,7 @@ public partial class MainWindow : Window
         switch (e.Key)
         {
             // When the left or right CTRL key is pressed down,
-            // disable scrolling and anable zooming
+            // disable scrolling and enable zooming
             case Key.LeftCtrl:
                 PdfViewerScroller.VerticalScrollBarVisibility = ScrollBarVisibility.Disabled;
                 // ZoomEnabled = true;
